@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="sqllight.js"></script>
+    <script>
+        $(document).ready(function () {
+            var SQLLightObj = new SQLLight("eComScotland");
+            SQLLightObj.DropTable("tb_Users");
+            SQLLightObj.CreateTable("tb_Users", ['UserID', 'UserName', 'Company']);
+            SQLLightObj.GetData("UserID", "tb_Users", "1 = 1",
+                function (data) {
+                    alert(data);
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
